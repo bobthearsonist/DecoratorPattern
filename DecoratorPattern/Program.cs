@@ -11,11 +11,11 @@ namespace DecoratorPattern
         static void Main(string[] args)
         {
             Pizza supreme = new SupremePizza();
-            var mushrooms = new Mushrooms(supreme);
-            var olives = new Olives(mushrooms);
-            var pepperoni = new Pepperoni(olives);
+            supreme = new Mushrooms(supreme);
+            supreme = new Olives(supreme);
+            supreme = new Pepperoni(supreme);
 
-            pepperoni.Cook();
+            supreme.Cook();
         }
     }
 
