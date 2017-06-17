@@ -1,0 +1,4 @@
+c:\users\mperry\documents\visual studio 2015\Projects\DecoratorPattern\DecoratorPattern\bin\Release\DecoratorPattern.exe
+c:\users\mperry\documents\visual studio 2015\Projects\DecoratorPattern\DecoratorPattern\bin\Release\DecoratorPattern.pdb
+c:\users\mperry\documents\visual studio 2015\Projects\DecoratorPattern\DecoratorPattern\obj\Release\DecoratorPattern.exe
+c:\users\mperry\documents\visual studio 2015\Projects\DecoratorPattern\DecoratorPattern\obj\Release\DecoratorPattern.pdb
