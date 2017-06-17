@@ -11,12 +11,9 @@ namespace DecoratorPattern
         static void Main(string[] args)
         {
             Pizza supreme = new SupremePizza();
-            var mushrooms = new Mushrooms();
-            mushrooms.AddTopping(supreme);
-            var olives = new Olives();
-            olives.AddTopping(mushrooms);
-            var pepperoni = new Pepperoni();
-            pepperoni.AddTopping(olives);
+            var mushrooms = new Mushrooms(supreme);
+            var olives = new Olives(mushrooms);
+            var pepperoni = new Pepperoni(olives);
 
             pepperoni.Cook();
         }
@@ -40,7 +37,7 @@ namespace DecoratorPattern
     {
         private Pizza pizza;
         protected abstract string toppingName { get; }
-        public void AddTopping(Pizza pizza) { this.pizza = pizza; }
+        public PizzaTopping(Pizza pizza) { this.pizza = pizza; }
 
         public override void Cook()
         {
@@ -53,6 +50,10 @@ namespace DecoratorPattern
 
     internal class Olives : PizzaTopping
     {
+        public Olives(Pizza pizza) : base(pizza)
+        {
+        }
+
         protected override string toppingName
         {
             get
@@ -64,6 +65,10 @@ namespace DecoratorPattern
 
     internal class Pepperoni:PizzaTopping
     {
+        public Pepperoni(Pizza pizza) : base(pizza)
+        {
+        }
+
         protected override string toppingName
         {
             get
@@ -75,6 +80,10 @@ namespace DecoratorPattern
 
     internal class Mushrooms:PizzaTopping
     {
+        public Mushrooms(Pizza pizza) : base(pizza)
+        {
+        }
+
         protected override string toppingName
         {
             get
